@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-chess",
+  "name": "Obsidian Chess",
+  "version": "1.0.1",
+  "minAppVersion": "0.9.12",
+  "description": "All you need to create your Chess related notes",
+  "author": "pmorim",
+  "authorUrl": "https://github.com/pmorim",
+  "isDesktopOnly": false
+}

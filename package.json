@@ -1,0 +1,33 @@
+{
+  "name": "obsidian-chess",
+  "version": "0.0.0",
+  "description": "An Obsidian plugin for you to create all your Chess related notes.",
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "chess"
+  ],
+  "author": "pmorim",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "@tsconfig/svelte": "^2.0.1",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1",
+    "svelte": "^3.37.0",
+    "svelte-check": "^2.1.0",
+    "svelte-preprocess": "^4.7.2",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.0"
+  },
+  "dependencies": {
+    "obsidian": "^0.12.16"
+  }
+}
