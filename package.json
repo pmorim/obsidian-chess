@@ -1,31 +1,36 @@
 {
   "name": "obsidian-chess",
-  "version": "0.0.0",
-  "description": "An Obsidian plugin for you to create all your Chess related notes.",
-  "keywords": [
-    "obsidian",
-    "plugin",
-    "chess"
-  ],
+  "version": "1.0.0",
+  "description": "An Obsidian plugin for all your Chess related notes.",
+  "main": "main.js",
   "author": "pmorim",
   "license": "MIT",
+  "keywords": [
+    "obsidian-plugin",
+    "chess"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "build": "webpack",
+    "dev": "webpack --config webpack.config.js -w"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "@babel/core": "^7.15.5",
     "@tsconfig/svelte": "^2.0.1",
+    "@types/node": "^16.10.2",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
     "eslint": "^7.32.0",
     "prettier": "^2.4.1",
     "svelte": "^3.37.0",
     "svelte-check": "^2.1.0",
-    "svelte-preprocess": "^4.7.2",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess": "^4.9.8",
+    "ts-loader": "^9.2.6",
     "tslib": "^2.2.0",
     "typescript": "^4.3.2",
-    "vite": "^2.6.0"
+    "webpack": "^5.56.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
     "obsidian": "^0.12.16"

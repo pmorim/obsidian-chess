@@ -1,4 +1,11 @@
+# Modules
 /node_modules/
-/dist/
+yarn.lock
+
+# Misc.
 /.vscode/
 .DS_Store
+
+# Build
+main.js
+/dist/
