@@ -1,7 +1,11 @@
 <script lang='ts'>
   export let pieceCode: string;
+
+  const pathToPieces = ('assets/piece-sets');
+  const pieceSet = 'cburnett';
 </script>
 
-{#if pieceCode}
-  <div />
-{/if}
+<img
+  src='{pathToPieces}/{pieceSet}/{pieceCode}.svg'
+  alt={pieceCode}
+/>

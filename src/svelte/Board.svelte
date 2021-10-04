@@ -1,22 +1,12 @@
 <script lang='ts'>
-  import Square from './Square.svelte'
+  import Square from './Square.svelte';
+  import { buildBoard } from '../chess-utils/board';
 
   export let size: number = 360;
   export let fen: string;
+  export let lastMove: string;
 
-  // Build the board
-  const squares = new Array(64).fill(null)
-  for (let i = 0; i < 8; i++) {
-    for (let j = 0; j < 8; j++) {
-      squares[i + 8*j] = {
-        size: size / 8,
-        pieceCode: '',
-        isLightSquare: 
-          (i % 2 === 0 && j % 2 === 0) ||
-          (i % 2 !== 0 && j % 2 !== 0),
-      }
-    }
-  }
+  $: squares = buildBoard(fen, lastMove, size);
 </script>
 
 <div style='--size: {size}px;'>

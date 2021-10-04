@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import Piece from './Piece.svelte'
+  import Piece from './Piece.svelte';
 
   export let size: number;
   export let isLightSquare: boolean;
@@ -10,7 +10,9 @@
   style='--size: {size}px;'
   class={isLightSquare ? 'light' : 'dark'}
 >
-  <Piece {pieceCode}/>
+  {#if pieceCode}
+    <Piece {pieceCode}/>
+  {/if}
 </div>
 
 <style>
