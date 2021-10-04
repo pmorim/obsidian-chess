@@ -6,7 +6,7 @@
   export let fen: string;
   export let lastMove: string;
 
-  $: squares = buildBoard(fen, lastMove, $settings.boardSize);
+  $: squares = buildBoard(fen, lastMove);
 </script>
 
 <div style='--size: {$settings.boardSize}px;'>

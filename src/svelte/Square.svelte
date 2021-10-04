@@ -1,9 +1,12 @@
 <script lang='ts'>
   import Piece from './Piece.svelte';
+  import { settings } from '../settings';
 
-  export let size: number;
   export let isLightSquare: boolean;
   export let pieceCode: string;
+
+  $: boardSize = parseInt($settings.boardSize, 10)
+  $: size = boardSize / 8;
 </script>
 
 <div
