@@ -1,6 +1,6 @@
 import { MarkdownPostProcessorContext, parseYaml } from 'obsidian';
 
-import Board from '../svelte/Board.svelte';
+import App from '../svelte/App.svelte';
 import type { Params } from './Params';
 
 export async function codeBlockProcessor(
@@ -10,6 +10,6 @@ export async function codeBlockProcessor(
 ): Promise<void> {
   const params: Params = parseYaml(source);
   const element = createDiv('chess-container');
-  const board = new Board({ target: element, props: params });
+  const app = new App({ target: element, props: params });
   el.appendChild(element);
 }

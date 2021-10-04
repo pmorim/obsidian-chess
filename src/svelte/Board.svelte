@@ -19,6 +19,7 @@
 
 <style>
   div {
+    grid-area: board;
     width: var(--size);
     height: var(--size);
 
