@@ -10,7 +10,7 @@
     "chess"
   ],
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack.config.js",
     "dev": "webpack --config webpack.config.js -w"
   },
   "devDependencies": {

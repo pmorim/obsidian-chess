@@ -7,7 +7,7 @@ const isDevMode = process.env.NODE_ENV === 'development';
 module.exports = {
   entry: './src/main.ts',
   output: {
-    path: path.resolve(__dirname, '.'),
+    path: '/mnt/c/Users/pmorim/Documents/digital-garden/.obsidian/plugins/obsidian-chess/',
     filename: 'main.js',
     libraryTarget: 'commonjs',
   },
