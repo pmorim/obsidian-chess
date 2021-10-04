@@ -3,13 +3,15 @@
   import { buildBoard } from '../chess-utils';
   import { settings } from '../settings';
 
-  export let fen: string;
-  export let lastMove: string;
+  export let fen = '';
+  export let flipBoard = false;
+  export let lastMove = '';
+  export let check = '';
 
-  $: squares = buildBoard(fen, lastMove);
+  $: squares = buildBoard(fen, lastMove, check);
 </script>
 
-<div style="--size: {$settings.boardSize}px;">
+<div class:flipBoard style="--size: {$settings.boardSize}px;">
   {#each squares as square}
     <Square {...square} />
   {/each}
@@ -21,6 +23,11 @@
     height: var(--size);
 
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .flipBoard {
+    flex-wrap: wrap-reverse !important;
   }
 </style>
