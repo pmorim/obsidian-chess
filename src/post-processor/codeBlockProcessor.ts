@@ -1,7 +1,5 @@
 import { MarkdownPostProcessorContext, parseYaml } from 'obsidian';
-
-import App from '../svelte/App.svelte';
-import type { Params } from './Params';
+import App, { Params } from '../svelte/App.svelte';
 
 export async function codeBlockProcessor(
   source: string,

@@ -1,3 +1,12 @@
+<script lang="ts" context="module">
+  export interface Params {
+    fen?: string;
+    flipBoard?: boolean;
+    lastMove?: string;
+    check?: string;
+  }
+</script>
+
 <script lang="ts">
   import Board from './Board.svelte';
   import Coords from './Coords.svelte';
