@@ -1,20 +1,17 @@
-<script lang='ts'>
+<script lang="ts">
   import Piece from './Piece.svelte';
   import { settings } from '../settings';
 
   export let isLightSquare: boolean;
   export let pieceCode: string;
 
-  $: boardSize = parseInt($settings.boardSize, 10)
+  $: boardSize = parseInt($settings.boardSize, 10);
   $: size = boardSize / 8;
 </script>
 
-<div
-  style='--size: {size}px;'
-  class={isLightSquare ? 'light' : 'dark'}
->
+<div style="--size: {size}px;" class={isLightSquare ? 'light' : 'dark'}>
   {#if pieceCode}
-    <Piece fenCode={pieceCode}/>
+    <Piece fenCode={pieceCode} />
   {/if}
 </div>
 

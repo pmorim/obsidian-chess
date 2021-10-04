@@ -1,5 +1,7 @@
 {
   "singleQuote": true,
   "tabWidth": 2,
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "trailingComma": "es5",
+  "semi": true
 }

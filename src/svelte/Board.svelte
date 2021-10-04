@@ -1,7 +1,7 @@
-<script lang='ts'>
+<script lang="ts">
   import Square from './Square.svelte';
   import { buildBoard } from '../chess-utils';
-  import { settings } from '../settings'
+  import { settings } from '../settings';
 
   export let fen: string;
   export let lastMove: string;
@@ -9,9 +9,9 @@
   $: squares = buildBoard(fen, lastMove);
 </script>
 
-<div style='--size: {$settings.boardSize}px;'>
+<div style="--size: {$settings.boardSize}px;">
   {#each squares as square}
-    <Square {...square}/>
+    <Square {...square} />
   {/each}
 </div>
 
