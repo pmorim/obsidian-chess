@@ -2,7 +2,7 @@ import { readFEN } from './fen';
 
 const boardCoords = (i: number, j: number) => i + 8 * j;
 
-export function buildBoard(fen: string, lastMove: string) {
+export function buildBoard(fen: string, lastMove?: string) {
   const fenBoard = readFEN(fen);
   const squares = new Array(64).fill(null);
 
