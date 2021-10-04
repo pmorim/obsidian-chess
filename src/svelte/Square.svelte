@@ -1,19 +1,29 @@
 <script lang='ts'>
+  import Piece from './Piece.svelte'
+
   export let size: number;
   export let isLightSquare: boolean;
+  export let pieceCode: string;
 </script>
 
 <div
-  style='width: {size}; height: {size};'
+  style='--size: {size}px;'
   class={isLightSquare ? 'light' : 'dark'}
-/>
+>
+  <Piece {pieceCode}/>
+</div>
 
 <style>
+  div {
+    width: var(--size);
+    height: var(--size);
+  }
+
   .light {
-    background-color: rgb(232, 235, 239);
+    background-color: hsl(214, 18%, 92%);
   }
 
   .dark {
-    background-color: rgb(125, 135, 150);
+    background-color: hsl(216, 11%, 54%);
   }
 </style>

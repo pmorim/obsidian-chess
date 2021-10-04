@@ -2,6 +2,7 @@
   import Square from './Square.svelte'
 
   export let size: number = 360;
+  export let fen: string;
 
   // Build the board
   const squares = new Array(64).fill(null)
@@ -18,7 +19,7 @@
   }
 </script>
 
-<div style='width: {size}; height: {size};'>
+<div style='--size: {size}px;'>
   {#each squares as square}
     <Square {...square}/>
   {/each}
@@ -26,6 +27,9 @@
 
 <style>
   div {
+    width: var(--size);
+    height: var(--size);
+
     display: flex;
     flex-wrap: wrap;
   }

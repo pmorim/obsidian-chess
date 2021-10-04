@@ -44,8 +44,9 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: './manifest.json', to: '.' },
-        { from: './src/main.css', to: './styles.css' },
+        { from: 'manifest.json', to: '.' },
+        { from: 'src/main.css', to: 'styles.css' },
+        { from: 'assets', to: 'assets' },
       ],
     }),
   ],
