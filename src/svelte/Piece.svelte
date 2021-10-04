@@ -1,13 +1,14 @@
 <script lang='ts'>
   export let pieceCode: string;
 
+  export let fenCode: string;
   const pathToPieces = ('assets/piece-sets');
   const pieceSet = 'cburnett';
 
   const isUpperCase = (char: string) => /^[A-Z]*$/.test(char)
-  $: pieceColor = isUpperCase(pieceCode) ? 'w' : 'b'
-  $: pieceFile = `${pieceColor}${pieceCode.toUpperCase()}.svg`
-  $: piecePath = `${pathToPieces}/${pieceSet}/${pieceFile}`
+  $: color = isUpperCase(fenCode) ? 'w' : 'b'
+  $: file = `${color}${fenCode.toUpperCase()}.svg`
+  $: path = `${pathToPieces}/${$settings.pieceSet}/${file}`
 </script>
 
-<img src={piecePath} alt={pieceCode} />
+<img src={path} alt={fenCode} />

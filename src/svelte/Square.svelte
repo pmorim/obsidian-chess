@@ -11,7 +11,7 @@
   class={isLightSquare ? 'light' : 'dark'}
 >
   {#if pieceCode}
-    <Piece {pieceCode}/>
+    <Piece fenCode={pieceCode}/>
   {/if}
 </div>
 
