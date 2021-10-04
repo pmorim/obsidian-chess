@@ -2,6 +2,8 @@ const isNumber = (char: string) => !isNaN(parseInt(char));
 
 export function readFEN(fen: string): string[] {
   const fenBoard = new Array(64).fill('');
+
+  if (fen) return fenBoard;
   const [position, ...rest] = fen.split(' ');
 
   let i = 0;
