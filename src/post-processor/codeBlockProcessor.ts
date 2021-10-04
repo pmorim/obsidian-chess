@@ -1,6 +1,5 @@
 import { MarkdownPostProcessorContext, parseYaml } from 'obsidian';
-
-import { renderBoard } from '../render/renderBoard';
+//import Board from '../svelte/Board.svelte';
 
 export async function codeBlockProcessor(
   source: string,
@@ -8,8 +7,7 @@ export async function codeBlockProcessor(
   ctx: MarkdownPostProcessorContext
 ): Promise<void> {
   const params = parseYaml(source);
-  const board = renderBoard(el, this.settings);
 
-  //const FEN = "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR";
-  //fenReader(FEN);
+  //const board = new Board();
+  //el.appendChild(board);
 }
