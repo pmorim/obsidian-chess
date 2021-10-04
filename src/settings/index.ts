@@ -1,2 +1,4 @@
+export * from './default';
 export * from './SettingsTab';
-export * from './settings';
+export * from './store';
+export * from './types';

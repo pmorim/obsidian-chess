@@ -7,9 +7,7 @@ export async function codeBlockProcessor(
   ctx: MarkdownPostProcessorContext
 ): Promise<void> {
   const params = parseYaml(source);
-
-  // Render board
   const element = createDiv('chess-container');
-  const board = new Board({ target: element, props: { size: 360, ...params } });
+  const board = new Board({ target: element, props: params });
   el.appendChild(element);
 }

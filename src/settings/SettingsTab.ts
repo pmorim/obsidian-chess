@@ -1,4 +1,8 @@
-import { App, PluginSettingTab, Setting } from 'obsidian';
+import { App, PluginSettingTab, Setting, TextComponent } from 'obsidian';
+import lodash from 'lodash';
+
+import { settings } from './store';
+import type { Settings } from './types';
 
 export class SettingsTab extends PluginSettingTab {
   plugin: any;
@@ -8,49 +12,37 @@ export class SettingsTab extends PluginSettingTab {
     this.plugin = plugin;
   }
 
+  createSetting(name: string, desc: string) {
+    const key = lodash.camelCase(name);
+
+    let store: Settings;
+    settings.subscribe((value: Settings) => (store = value));
+
+    new Setting(this.containerEl)
+      .setName(name)
+      .setDesc(desc)
+      .addText((text: TextComponent) =>
+        text.setValue(store[key]).onChange(async (value: string) => {
+          // Svelte store
+          settings.update((settings) => ({ ...settings, [key]: value }));
+
+          // Obsidian
+          this.plugin.settings[key] = value;
+          await this.plugin.saveSettings();
+        })
+      );
+  }
+
   display(): void {
-    let { containerEl } = this;
-    containerEl.empty();
+    this.containerEl.empty();
+    this.containerEl.createEl('h2', { text: 'Obsidian Chess' });
 
-    containerEl.createEl('h2', { text: 'Obsidian Chess' });
+    this.containerEl.createEl('h3', { text: 'General' });
+    this.createSetting('Board Theme', 'The theme of the board tiles');
+    this.createSetting('Piece Set', 'The style of the pieces');
+    this.createSetting('Board Size', 'The size of the board, in CSS units');
 
-    new Setting(containerEl)
-      .setName('Board Theme')
-      .setDesc('The theme of the board tiles')
-      .addText((text) =>
-        text
-          .setPlaceholder('Board Theme')
-          .setValue('blue')
-          .onChange(async (value) => {
-            this.plugin.settings.boardTheme = value;
-            await this.plugin.saveSettings();
-          })
-      );
-
-    new Setting(containerEl)
-      .setName('Piece Set')
-      .setDesc('The style of the pieces')
-      .addText((text) =>
-        text
-          .setPlaceholder('Piece Set')
-          .setValue('cburnett')
-          .onChange(async (value) => {
-            this.plugin.settings.pieceSet = value;
-            await this.plugin.saveSettings();
-          })
-      );
-
-    new Setting(containerEl)
-      .setName('Board Size')
-      .setDesc('The size of the board, in CSS units')
-      .addText((text) =>
-        text
-          .setPlaceholder('Board Size')
-          .setValue('360')
-          .onChange(async (value) => {
-            this.plugin.settings.pieceSet = parseInt(value, 10);
-            await this.plugin.saveSettings();
-          })
-      );
+    this.containerEl.createEl('h3', { text: 'Advanced' });
+    this.containerEl.createEl('p', { text: 'Coming soon...' });
   }
 }
