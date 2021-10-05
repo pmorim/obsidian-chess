@@ -29,7 +29,7 @@
     --dark: #b58863;
   }
   .green {
-    --light: #86a666;
+    --light: #ffffdd;
     --dark: #86a666;
   }
   .ic {
@@ -38,7 +38,7 @@
   }
   .purple {
     --light: #9f90b0;
-    --dark: #9f90b0;
+    --dark: #7d4a8d;
   }
 
   /* Light or Dark square */
