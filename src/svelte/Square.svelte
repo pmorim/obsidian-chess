@@ -9,23 +9,50 @@
   $: size = boardSize / 8;
 </script>
 
-<div style="--size: {size}px;" class={isLightSquare ? 'light' : 'dark'}>
+<div
+  class="square {$settings.boardTheme} {isLightSquare ? 'light' : 'dark'}"
+  style="--size: {size}px;"
+>
   {#if pieceCode}
     <Piece fenCode={pieceCode} />
   {/if}
 </div>
 
 <style>
-  div {
+  /* Theme colors */
+  .blue {
+    --light: #dee3e6;
+    --dark: #8ca2ad;
+  }
+  .brown {
+    --light: #f0d9b5;
+    --dark: #b58863;
+  }
+  .green {
+    --light: #86a666;
+    --dark: #86a666;
+  }
+  .ic {
+    --light: #ececec;
+    --dark: #c1c18e;
+  }
+  .purple {
+    --light: #9f90b0;
+    --dark: #9f90b0;
+  }
+
+  /* Light or Dark square */
+  .light {
+    --color: var(--light);
+  }
+  .dark {
+    --color: var(--dark);
+  }
+
+  /* The square */
+  .square {
     width: var(--size);
     height: var(--size);
-  }
-
-  .light {
-    background-color: hsl(214, 18%, 92%);
-  }
-
-  .dark {
-    background-color: hsl(216, 11%, 54%);
+    background-color: var(--color);
   }
 </style>
