@@ -15,16 +15,16 @@
 </script>
 
 <div
-  class={type}
+  class="coords {type}"
   style="--boardSize: {boardSize}px; --coordSize: {coordSize}px"
 >
   {#each coords as coord}
-    <p>{coord}</p>
+    <p class="coord">{coord}</p>
   {/each}
 </div>
 
 <style>
-  div {
+  .coords {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -46,7 +46,7 @@
     height: var(--coordSize);
   }
 
-  div p {
+  .coords > .coord {
     font-size: var(--coordSize);
     margin: 0 !important;
   }

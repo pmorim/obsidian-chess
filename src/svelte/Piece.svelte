@@ -10,4 +10,4 @@
   $: path = `${pathToPieces}/${$settings.pieceSet}/${file}`;
 </script>
 
-<img src={path} alt={fenCode} />
+<img class="piece {fenCode}" src={path} alt={fenCode} />

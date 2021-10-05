@@ -11,14 +11,14 @@
   $: squares = buildBoard(fen, lastMove, check);
 </script>
 
-<div class:flipBoard style="--size: {$settings.boardSize}px;">
+<div class="board" class:flipBoard style="--size: {$settings.boardSize}px;">
   {#each squares as square}
     <Square {...square} />
   {/each}
 </div>
 
 <style>
-  div {
+  .board {
     grid-area: board;
     width: var(--size);
     height: var(--size);

@@ -17,14 +17,17 @@
   $: coordSize = squareSize / 4;
 </script>
 
-<div style="--boardSize: {boardSize}px; --coordSize: {coordSize}px">
+<div
+  class="chess"
+  style="--boardSize: {boardSize}px; --coordSize: {coordSize}px"
+>
   <Board {...$$props} />
   <Coords type="ranks" reverse={$$props.flipBoard} />
   <Coords type="files" reverse={$$props.flipBoard} />
 </div>
 
 <style>
-  div {
+  .chess {
     display: grid;
     grid-template-rows: var(--boardSize) var(--coordSize);
     grid-template-columns: var(--boardSize) var(--coordSize);
