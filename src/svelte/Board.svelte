@@ -29,6 +29,7 @@
   }
 
   .flipBoard {
+    flex-direction: row-reverse !important;
     flex-wrap: wrap-reverse !important;
   }
 </style>
