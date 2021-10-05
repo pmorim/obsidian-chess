@@ -11,3 +11,11 @@
 </script>
 
 <img class="piece {fenCode}" src={path} alt={fenCode} />
+
+<style>
+  .piece {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+</style>
