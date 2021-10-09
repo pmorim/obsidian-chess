@@ -40,7 +40,10 @@ export class SettingsTab extends PluginSettingTab {
     this.containerEl.createEl('h3', { text: 'General' });
     this.createSetting('Board Theme', 'The theme of the board tiles');
     this.createSetting('Piece Set', 'The style of the pieces');
-    this.createSetting('Board Size', 'The size of the board, in CSS units');
+    this.createSetting(
+      'Board Size',
+      'The width and height of the board, in pixels'
+    );
 
     this.containerEl.createEl('h3', { text: 'Advanced' });
     this.containerEl.createEl('p', { text: 'Coming soon...' });
