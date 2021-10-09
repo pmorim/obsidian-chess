@@ -5,6 +5,13 @@
     lastMove?: string;
     check?: string;
   }
+
+  export const DEFAULT_PARAMS: Params = {
+    fen: null,
+    flipBoard: false,
+    lastMove: null,
+    check: null,
+  };
 </script>
 
 <script lang="ts">
