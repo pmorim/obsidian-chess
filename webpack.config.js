@@ -1,13 +1,16 @@
+const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const sveltePreprocess = require('svelte-preprocess');
 
 const isDevMode = process.env.NODE_ENV === 'development';
 
+require('dotenv').config({ path: './.env' });
+
 module.exports = {
   entry: './src/main.ts',
   output: {
-    path: '/mnt/c/Users/pmorim/Documents/digital-garden/.obsidian/plugins/obsidian-chess/',
+    path: process.env.BUILD_PATH || path.resolve(__dirname, './build'),
     filename: 'main.js',
     libraryTarget: 'commonjs',
   },
@@ -36,18 +39,17 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|njk|html)$/,
-        type: 'asset/source',
+        test: /\.(svg|png)$/,
+        type: 'asset/inline',
       },
     ],
   },
   plugins: [
     new CopyPlugin({
-      patterns: [
-        { from: 'manifest.json', to: '.' },
-        { from: 'src/main.css', to: 'styles.css' },
-        { from: 'assets', to: 'assets' },
-      ],
+      patterns: [{ from: 'manifest.json', to: '.' }],
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
     }),
   ],
   resolve: {

@@ -1,11 +1,14 @@
 # Modules
-/node_modules/
+/node_modules
 yarn.lock
 
 # Misc.
-/.vscode/
+/.vscode
 .DS_Store
 
 # Build
 main.js
-/dist/
+/build
+
+# Secrets
+*.env
