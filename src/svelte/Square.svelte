@@ -19,12 +19,14 @@
   class="square {$settings.boardTheme}"
   class:light
   class:dark
-  class:lastMove
-  class:check
 >
-  {#if lastMove || check}
-    <div class="overlay" class:lastMove class:check />
+  {#if lastMove}
+    <div class="lastMove overlay" />
   {/if}
+  {#if check}
+    <div class="check overlay" />
+  {/if}
+
   {#if pieceCode}
     <Piece fenCode={pieceCode} />
   {/if}
@@ -74,19 +76,16 @@
   }
 
   /* Color overlays */
-  .lastMove {
-    --overlay-color: var(--lastMove-color) !important;
-  }
-  .check {
-    --overlay-color: #f00 !important;
-  }
-  .square > .overlay {
+  .overlay {
     width: 100%;
     height: 100%;
     position: absolute;
-
-    --overlay-color: #fff0; /* transparent */
-    background-color: var(--overlay-color);
+  }
+  .lastMove {
+    background-color: var(--lastMove-color);
+  }
+  .check {
+    background: radial-gradient(#f00f, #f000);
   }
 
   /* The square */
