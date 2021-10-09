@@ -4,7 +4,7 @@ export function readFEN(fen: string): string[] {
   const fenBoard = new Array(64).fill('');
 
   if (!fen) return fenBoard;
-  const [position, ...rest] = fen.split(' ');
+  const [position] = fen.split(' ');
 
   let i = 0;
   for (const char of position) {
