@@ -23,6 +23,7 @@
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "file-loader": "^6.2.0",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.37.0",
