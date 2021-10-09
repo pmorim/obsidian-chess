@@ -1,7 +1,7 @@
 import { readFEN } from './fen';
 
-const boardCoords = (i: number, j: number) => i + 8 * j;
-const isLightSquare = (i, j) =>
+const getArrayIndex = (i: number, j: number) => i + 8 * j;
+const isLightSquare = (i: number, j: number) =>
   (i % 2 === 0 && j % 2 === 0) || (i % 2 !== 0 && j % 2 !== 0);
 
 export function buildBoard(fen: string, lastMove?: string, check?: string) {
@@ -10,8 +10,8 @@ export function buildBoard(fen: string, lastMove?: string, check?: string) {
 
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
-      squares[boardCoords(i, j)] = {
-        pieceCode: fenBoard[boardCoords(i, j)],
+      squares[getArrayIndex(i, j)] = {
+        pieceCode: fenBoard[getArrayIndex(i, j)],
         isLight: isLightSquare(i, j),
       };
     }
