@@ -47,7 +47,10 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'manifest.json', to: '.' }],
+      patterns: [
+        { from: 'manifest.json', to: '.' },
+        { from: 'assets', to: 'assets' },
+      ],
     }),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
