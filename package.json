@@ -2,7 +2,7 @@
   "name": "obsidian-chess",
   "version": "1.0.0",
   "description": "An Obsidian plugin for all your Chess related notes.",
-  "main": "main.js",
+  "main": "/build/main.js",
   "author": "pmorim",
   "license": "MIT",
   "keywords": [
