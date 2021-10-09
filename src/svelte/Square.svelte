@@ -2,28 +2,20 @@
   import Piece from './Piece.svelte';
   import { settings } from '../settings';
 
-  export let pieceCode = '';
-  export let isLight = false;
-  export let lastMove = false;
-  export let check = false;
+  export let variant: 'light' | 'dark';
+  export let pieceCode: string;
+  export let isLastMove: boolean;
+  export let isCheck: boolean;
 
   $: boardSize = parseInt($settings.boardSize, 10);
   $: size = boardSize / 8;
-
-  $: light = isLight;
-  $: dark = !isLight;
 </script>
 
-<div
-  style="--size: {size}px;"
-  class="square {$settings.boardTheme}"
-  class:light
-  class:dark
->
-  {#if lastMove}
+<div style="--size: {size}px;" class="square {$settings.boardTheme} {variant}">
+  {#if isLastMove}
     <div class="lastMove overlay" />
   {/if}
-  {#if check}
+  {#if isCheck}
     <div class="check overlay" />
   {/if}
 
