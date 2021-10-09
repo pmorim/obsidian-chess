@@ -12,6 +12,6 @@
     "types": ["svelte", "node"],
     "lib": ["dom", "esnext", "scripthost", "es2015"]
   },
-  "include": ["src/*"],
+  "include": ["src/*", "src/custom.d.ts"],
   "exclude": ["node_modules"]
 }
