@@ -16,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@tsconfig/svelte": "^2.0.1",
+    "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.2",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
@@ -35,7 +36,6 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.175",
     "lodash": "^4.17.21",
     "obsidian": "^0.12.16"
   }
