@@ -7,7 +7,7 @@
   }
 
   export const DEFAULT_PARAMS: Params = {
-    fen: null,
+    fen: '8/8/8/8/8/8/8/8',
     flipBoard: false,
     lastMove: null,
     check: null,
