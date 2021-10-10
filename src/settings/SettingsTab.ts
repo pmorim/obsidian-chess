@@ -10,6 +10,7 @@ export class SettingsTab extends PluginSettingTab {
   constructor(app: App, plugin: any) {
     super(app, plugin);
     this.plugin = plugin;
+    settings.set(this.plugin.settings);
   }
 
   createSetting(name: string, desc: string) {
