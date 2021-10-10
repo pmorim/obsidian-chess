@@ -9,7 +9,7 @@ export default class ObsidianChess extends Plugin {
   async onload() {
     console.log('Chess plugin: loaded');
 
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    await this.loadSettings();
     this.addSettingTab(new SettingsTab(this.app, this));
 
     this.registerMarkdownCodeBlockProcessor(
@@ -20,6 +20,10 @@ export default class ObsidianChess extends Plugin {
 
   onunload() {
     console.log('Chess plugin: unloaded');
+  }
+
+  async loadSettings() {
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
   }
 
   async saveSettings() {
