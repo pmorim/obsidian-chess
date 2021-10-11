@@ -1,8 +1,20 @@
 <script lang="ts" context="module">
   export interface Params {
+    /**
+     * The FEN code of the position
+     */
     fen?: string;
+    /**
+     * If the board should be flipped to black's perspective
+     */
     flipBoard?: boolean;
+    /**
+     * The two squares to be highlighted as a last move
+     */
     lastMove?: string;
+    /**
+     * The square to be highlighted as a check
+     */
     check?: string;
   }
 
