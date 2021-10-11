@@ -34,19 +34,23 @@
   $: boardSize = parseInt($settings.boardSize, 10);
   $: squareSize = boardSize / 8;
   $: coordSize = squareSize / 4;
+
+  $: showCoords = $settings.showCoords;
 </script>
 
 <div
-  class="chess"
+  class:showCoords
   style="--boardSize: {boardSize}px; --coordSize: {coordSize}px"
 >
   <Board {...$$props} />
-  <Coords type="ranks" reverse={$$props.flipBoard} />
-  <Coords type="files" reverse={$$props.flipBoard} />
+  {#if showCoords}
+    <Coords type="ranks" reverse={$$props.flipBoard} />
+    <Coords type="files" reverse={$$props.flipBoard} />
+  {/if}
 </div>
 
 <style>
-  .chess {
+  .showCoords {
     display: grid;
     grid-template-rows: var(--boardSize) var(--coordSize);
     grid-template-columns: var(--boardSize) var(--coordSize);

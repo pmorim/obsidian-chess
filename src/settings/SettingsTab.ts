@@ -4,6 +4,7 @@ import {
   Setting,
   TextComponent,
   DropdownComponent,
+  ToggleComponent,
 } from 'obsidian';
 import lodash from 'lodash';
 
@@ -38,30 +39,24 @@ export class SettingsTab extends PluginSettingTab {
       'The width and height of the board, in pixels'
     );
     this.dropdownSetting(
+      'Board Theme',
+      'The colors of the board tiles',
+      BOARD_THEMES_RECORD
+    );
+    this.dropdownSetting(
       'Piece Set',
       'The style of the pieces',
       PIECE_SETS_RECORD
     );
-    this.dropdownSetting(
-      'Board Theme',
-      'The colors of the board tiles',
-      BOARD_THEMES_RECORD
+    this.toggleSetting(
+      'Show Coords',
+      'Wether or not the board coordinates should be displayed'
     );
   }
 
   customThemes() {
     this.sectionTitle('Custom Themes');
     this.containerEl.createEl('p', { text: 'Coming soon...' });
-  }
-
-  textSetting(name: string, desc: string) {
-    const key = lodash.camelCase(name);
-    new Setting(this.containerEl)
-      .setName(name)
-      .setDesc(desc)
-      .addText((text: TextComponent) =>
-        text.setValue(this.settings[key]).onChange(this.onSettingChange(key))
-      );
   }
 
   dropdownSetting(name: string, desc: string, options: Record<string, string>) {
@@ -77,8 +72,28 @@ export class SettingsTab extends PluginSettingTab {
       });
   }
 
+  toggleSetting(name: string, desc: string) {
+    const key = lodash.camelCase(name);
+    new Setting(this.containerEl)
+      .setName(name)
+      .setDesc(desc)
+      .addToggle((toggle: ToggleComponent) => {
+        toggle.setValue(this.settings[key]).onChange(this.onSettingChange(key));
+      });
+  }
+
+  textSetting(name: string, desc: string) {
+    const key = lodash.camelCase(name);
+    new Setting(this.containerEl)
+      .setName(name)
+      .setDesc(desc)
+      .addText((text: TextComponent) =>
+        text.setValue(this.settings[key]).onChange(this.onSettingChange(key))
+      );
+  }
+
   onSettingChange(key: string) {
-    return async (value: string) => {
+    return async (value: any) => {
       settingsStore.update((settings) => ({ ...settings, [key]: value }));
 
       this.plugin.settings[key] = value;

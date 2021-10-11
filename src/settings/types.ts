@@ -1,5 +1,9 @@
 export interface Settings {
   /**
+   * The width and height of the board, in pixels
+   */
+  boardSize: string;
+  /**
    * The colors of the board tiles
    */
   boardTheme: BoardTheme;
@@ -8,13 +12,13 @@ export interface Settings {
    */
   pieceSet: PieceSet;
   /**
-   * The width and height of the board, in pixels
+   * Wether or not the board coordinates should be displayed
    */
-  boardSize: string;
+  showCoords: boolean;
   /**
    * Workaround for linting purposes
    */
-  [key: string]: string;
+  [key: string]: any;
 }
 
 function getRecord(arr: readonly string[]) {
