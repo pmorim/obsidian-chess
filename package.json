@@ -11,14 +11,23 @@
   ],
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack --config webpack.config.js -w"
+    "dev": "webpack --config webpack.config.js -w",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-links": "^6.3.10",
+    "@storybook/addon-storyshots": "^6.3.10",
+    "@storybook/addon-svelte-csf": "^1.1.0",
+    "@storybook/svelte": "^6.3.10",
     "@tsconfig/svelte": "^2.0.1",
     "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.2",
     "babel-loader": "^8.2.2",
+    "chromatic": "^5.10.2",
     "copy-webpack-plugin": "^9.0.1",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",

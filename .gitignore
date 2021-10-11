@@ -7,7 +7,7 @@ yarn.lock
 .DS_Store
 
 # Build
-main.js
+./main.js
 /build
 
 # Secrets
