@@ -9,7 +9,7 @@
     "noImplicitAny": true,
     "importHelpers": true,
     "allowJs": true,
-    "types": ["svelte", "node"],
+    "types": ["svelte", "node", "jest"],
     "lib": ["dom", "esnext", "scripthost", "es2015"]
   },
   "include": ["src/*", "src/@types/svelte.d.ts", "src/@types/assets.d.ts"],

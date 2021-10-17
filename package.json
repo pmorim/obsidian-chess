@@ -12,7 +12,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "dev": "webpack --config webpack.config.js -w",
-    "test": "jest src",
+    "test": "jest",
     "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "obsidian": "^0.12.16"
+    "obsidian": "^0.12.16",
+    "ts-jest": "^27.0.7"
   }
 }
