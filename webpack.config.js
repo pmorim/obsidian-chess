@@ -41,7 +41,6 @@ module.exports = {
       {
         test: /\.(svg|png|jpg|gif)$/,
         type: 'asset/inline',
-        use: ['file-loader'],
       },
     ],
   },
