@@ -39,6 +39,7 @@ module.exports = {
         ],
       },
       {
+        // Making assets inline imports
         test: /\.(svg|png|jpg|gif)$/,
         type: 'asset/inline',
       },
@@ -48,6 +49,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'manifest.json', to: '.' },
+
+        // Manually copying the assets folder
         { from: 'assets', to: 'assets' },
       ],
     }),
