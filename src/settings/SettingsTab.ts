@@ -1,5 +1,4 @@
 import {
-  App,
   PluginSettingTab,
   Setting,
   TextComponent,
@@ -15,8 +14,8 @@ export class SettingsTab extends PluginSettingTab {
   plugin: any;
   settings: Settings;
 
-  constructor(app: App, plugin: any) {
-    super(app, plugin);
+  constructor(plugin: any) {
+    super(plugin.app, plugin);
     this.plugin = plugin;
 
     settingsStore.set(this.plugin.settings);
