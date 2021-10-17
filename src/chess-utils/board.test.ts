@@ -1,5 +1,5 @@
 import { buildBoard } from './board';
 
-test('build board correctly', () => {
-  expect(true).toBeTruthy();
+describe('Array of pieces from FEN code', () => {
+  it.skip('builds board correctly', () => {});
 });
