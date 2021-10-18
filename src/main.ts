@@ -10,7 +10,7 @@ export default class ObsidianChess extends Plugin {
     console.log('Chess plugin: loaded');
 
     await this.loadSettings();
-    this.addSettingTab(new SettingsTab(this.app, this));
+    this.addSettingTab(new SettingsTab(this));
 
     this.registerMarkdownCodeBlockProcessor(
       'chess',

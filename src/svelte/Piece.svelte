@@ -2,9 +2,10 @@
   import { settings } from '../settings';
 
   export let fenCode: string;
-  const pathToPieces = 'assets/piece-sets';
 
   const isUpperCase = (char: string) => /^[A-Z]*$/.test(char);
+  const pathToPieces = 'assets/piece-sets';
+
   $: color = isUpperCase(fenCode) ? 'w' : 'b';
   $: piece = `${color}${fenCode.toUpperCase()}.svg`;
   $: path = `${pathToPieces}/${$settings.pieceSet}/${piece}`;
