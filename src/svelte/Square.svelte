@@ -83,10 +83,6 @@
   /* The square */
   .square {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     width: var(--size);
     height: var(--size);
     background-color: var(--color);

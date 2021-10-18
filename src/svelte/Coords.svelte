@@ -19,7 +19,7 @@
   style="--boardSize: {boardSize}px; --coordSize: {coordSize}px"
 >
   {#each coords as coord}
-    <p class="coord">{coord}</p>
+    <p class="coord noSelect">{coord}</p>
   {/each}
 </div>
 
@@ -49,5 +49,12 @@
   .coords > .coord {
     font-size: var(--coordSize);
     margin: 0 !important;
+  }
+
+  .noSelect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 </style>
