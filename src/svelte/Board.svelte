@@ -3,7 +3,7 @@
   import { buildBoard } from '../chess-utils';
   import { settings } from '../settings';
 
-  export let fen = '';
+  export let fen = '8/8/8/8/8/8/8/8';
   export let flipBoard = false;
   export let lastMove = '';
   export let check = '';

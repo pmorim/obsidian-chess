@@ -39,8 +39,8 @@ Here is a list of all the arguments that can be passed to the code-block:
 | ---------- | ------- | ----------------------------------------------------- | ----------------- |
 | fen        | string  | The FEN code of the position                          | "8/8/8/8/8/8/8/8" |
 | flipBoard  | boolean | If the board should be flipped to black's perspective | false             |
-| lastMove   | string  | The two squares to be highlighted as a last move      | null              |
-| check      | string  | The square to be highlighted as a check               | null              |
+| lastMove   | string  | The two squares to be highlighted as a last move      | ""                |
+| check      | string  | The square to be highlighted as a check               | ""                |
 
 ## Features
 
