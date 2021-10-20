@@ -7,7 +7,6 @@
 - [Usage](#usage)
 - [Documentation](#documentation)
 - [Features](#features)
-- [Roadmap](#roadmap)
 - [Q&A](#qa)
 - [Inspiration](#inspiration)
 - [Technology](#technology)
@@ -44,32 +43,28 @@ Here is a list of all the arguments that can be passed to the code-block:
 
 ## Features
 
-Here is a condensed list of the plugin's features:
+Here is a condensed list of the current and future plugin's features:
 
-- Display a chess position by passing its **FEN code**.
-- Customize the board with different **themes and piece sets**.
-- If you don't like the built-in themes, **create your own**.
-- **Flip the board** to see it from black's perspective.
-- Highlight the tiles of the **last move** or **check**.
-- See the board tile's **coordinates**.
-
-## Roadmap
-
-Here is a condensed list of future features:
-
-- Ability to display **arrows** between tiles to show the main ideas of the position.
-- Ability to **mark tiles** to show their importance in the position.
-- **Board editor** window to automatically generate the code-blocks for you.
+- [x] Display a chess position by passing its **FEN code**.
+- [x] Customize the board with different **themes and piece sets**.
+- [x] If you don't like the built-in themes, **create your own**.
+- [x] **Flip the board** to see it from black's perspective.
+- [x] Highlight the tiles of the **last move** or **check**.
+- [x] See the board tile's **coordinates**.
+- [ ] Custom, user defined, board **themes**.
+- [ ] Ability to display **arrows** between tiles to show the main ideas of the position.
+- [ ] Ability to **mark tiles** to show their importance in the position.
+- [ ] **Board editor** window to automatically generate the code-blocks for you.
 
 ## Q&A
 
 **Q:** Why did you make this plugin?
 
-- **A:** When I tried to make some notes about a new chess opening I was learning, I didn't find a way to embed a chess position on an markdown file since Lichess' `<iframe>` only allows to display full games. So i resorted to just taking a screenshot of Lichess' board editor and pasting that image in the markdown file. When I head of the [Obsidian October](https://publish.obsidian.md/hub/11+-+Events/Obsidian+October+2021) contest I thought it would be a good excuse to make a chess plugin.
+- **A:** When I tried to make some notes about a new chess opening I was learning, I didn't find a way to embed a chess position on an markdown file since Lichess' `<iframe>` only allows to display full games. So i resorted to just taking a screenshot of Lichess' board editor and pasting that image in the markdown file. When I heard of the [Obsidian October](https://publish.obsidian.md/hub/11+-+Events/Obsidian+October+2021) contest I thought it would be a good excuse to make a chess plugin.
 
 **Q:** What's your rating?
 
-- **A:** I'm quite bad at chess; I'm still just learning and have only recently started taking the game seriously. As of writing this I'm around 1400 to 1500 on rapid (only time control I play is 10+0). If you're interested, you can check out my [lichess account](https://lichess.org/@/frizd). I have never played on a tournament, so I don't have an official FIDE rating.
+- **A:** I'm quite bad at chess; I'm still just learning and have only recently started taking the game seriously. As of writing this I'm around 1400 to 1500 on rapid. If you're interested, you can check out my [lichess account](https://lichess.org/@/frizd). I have never played on a tournament, so I don't have an official FIDE rating.
 
 ## Inspiration
 
