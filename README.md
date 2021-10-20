@@ -27,7 +27,7 @@ lastMove: d7d5
 ```
 ````
 
-<!-- Insert screen of the board -->
+![Caro-Kann position](./assets/screenshots/Caro-Kann.png)
 
 > **Note:** You can easily get the FEN code of the position from the website where you play online chess. For example: [Lichess' board editor](https://lichess.org/editor?fen=rnbqkbnr%2Fpp2pppp%2F2p5%2F3p4%2F3PP3%2F8%2FPPP2PPP%2FRNBQKBNR+w+KQkq+-+0+2).
 
