@@ -2,6 +2,12 @@
 
 > An Obsidian plugin for all your Chess related notes.
 
+## Workaround
+
+There is currently a problem with obsidian getting the assets.
+A simple workaround is to get the assets folder from the releases page.
+More info about this issue can be found in [Issue #3](https://github.com/pmorim/obsidian-chess/issues/3).
+
 ## Index
 
 - [Usage](#usage)
